@@ -19,4 +19,9 @@ class Banner(models.Model):
             url = ''
         return url
 
+class Faq(models.Model):
+    title = models.CharField(("FAQ Title"), max_length=150)
+    description = models.TextField(("FAQ Description"))
 
+    def __str__(self):
+        return self.title
