@@ -1,6 +1,8 @@
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 from django.views.generic import View
 from core.models import Banner
+from core.forms import AppointmentForm
+from django.contrib import messages
 # Create your views here.
 
 class HomeView(View):
@@ -8,9 +10,17 @@ class HomeView(View):
     
     def get(self, request):
         banners = Banner.objects.all().order_by('-id')[:5]
-        doctors = Banner.objects.all()
+        appointment_form = AppointmentForm
         context = {
             'banners': banners,
-            'doctors': doctors
+            'appointment_form': appointment_form
         }
         return render(request, self.template_name, context)
+
+    def post(self, request):
+        appointment_form = AppointmentForm(request.POST)
+        if appointment_form.is_valid():
+            appointment_form.save()
+            messages.success(request, "Your Appointment is submited Successfully")
+            return redirect('core:home')
+        return render(request, self.template_name, {'appointment_form': appointment_form})

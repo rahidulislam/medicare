@@ -18,3 +18,5 @@ class Banner(models.Model):
         except:
             url = ''
         return url
+
+

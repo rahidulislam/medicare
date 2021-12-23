@@ -46,36 +46,50 @@
                         <div class="uni-home-title">
                             <h3>Book appoitment</h3>
                             <div class="uni-underline"></div>
+                            {% if messages %}
+                                
+                                {% for message in messages %}
+                                    <div class="alert alert-{% if message.tags %}{{ message.tags }}{% endif %}  alert-dismissible" role="alert">
+                                        {{ message }}
+                                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                {% endfor %}
+                                    
+                            {% endif %}   
+                            
                         </div>
 
-                        <form action="#">
+                        <form action="" method="POST">
+                            {% csrf_token %}
                             <div class="row">
                                 <div class="col-md-5">
                                     <div class="input-group form-group">
                                         <span class="input-group-addon"><i class="fa fa-user" aria-hidden="true"></i></span>
-                                        <input type="text" class="form-control" name="name" value="" placeholder="your name">
+                                        {{ appointment_form.name }}
                                     </div>
                                     <div class="input-group form-group">
                                         <span class="input-group-addon"><i class="fa fa-phone" aria-hidden="true"></i></span>
-                                        <input type="tel" class="form-control" name="phone" value="" placeholder="phone number">
+                                        {{ appointment_form.phone }}
                                     </div>
                                     <div class="input-group form-group">
                                         <span class="input-group-addon"><i class="fa fa-envelope" aria-hidden="true"></i></span>
-                                        <input type="email" class="form-control" name="email" value="" placeholder="email">
+                                        {{ appointment_form.email }}
                                     </div>
                                     <div class="input-group form-group">
                                         <div class="input-group date date-check-in" data-date="12-02-2017" data-date-format="mm-dd-yyyy">
                                             <span class="input-group-addon"><i class="fa fa-calendar" aria-hidden="true"></i></span>
-                                            <input name="date1" class="form-control" type="text" value="12-02-2017">
-                                            <span class="input-group-addon btn"><i class="fa fa-calendar" id="ti-calendar1" aria-hidden="true"></i></span>
+                                            {{ appointment_form.appointment_date }}
+                                            
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-md-7">
                                     <div class="input-group form-group">
-                                        <textarea id="message" name="phone" class="form-control" placeholder="note"></textarea>
+                                        {{ appointment_form.note }}
                                     </div>
-                                    <button class="vk-btn vk-btn-send">send</button>
+                                    <button type="submit" class="vk-btn vk-btn-send">send</button>
                                 </div>
                             </div>
                         </form>
