@@ -25,7 +25,25 @@ class Doctor(models.Model):
     image = models.ImageField(upload_to='doctor/', blank=True)
 
     def __str__(self):
-        return self.doctor_name
+        return self.name
+
+    def image_url(self):
+        try:
+            url = self.image.url
+        except:
+            url = ''
+        return url
+
+
+class Service(models.Model):
+    department = models.ForeignKey(Department, verbose_name=("Department"), on_delete=models.CASCADE, related_name='department_service')
+    name = models.CharField(max_length=100)
+    short_description = models.TextField(("Short Description"), blank=True)
+    description = models.TextField(("Description"), blank=True)
+    image = models.ImageField(("Service Image"), upload_to='service/', blank=True)
+
+    def __str__(self):
+        return self.name
 
     def image_url(self):
         try:

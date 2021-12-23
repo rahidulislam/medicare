@@ -8,126 +8,30 @@
                 </div>
 
             <div class="uni-owl-four-item owl-carousel owl-theme">
+                
+                {% for doctor in doctors %}
                 <div class="item">
                     <div class="uni-team-default">
                         <div class="item-img">
-                            <img src="images/team/img.png" alt="" class="img-responsive">
+                            <img src="{{ doctor.image_url }}" alt="" class="img-responsive">
                         </div>
                         <div class="item-caption">
                             <div class="col-md-3 col-sm-3 col-xs-3 uni-clear-padding">
                                 <div class="item-icons">
-                                    <img src="images/icons_box/icon_4/icon-5.png" alt="">
+                                    <img src="{{ doctor.department.image_url }}" alt="">
                                 </div>
                             </div>
                             <div class="col-md-9 col-sm-9 col-xs-9 uni-clear-padding">
                                 <div class="item-title">
-                                    <h4>adam jonson</h4>
-                                    <span>Cardiologist</span>
+                                    <h4>{{ doctor.name }}</h4>
+                                    <span>{{ doctor.designation }}</span>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="item">
-                    <div class="uni-team-default">
-                        <div class="item-img">
-                            <img src="images/team/img1.png" alt="" class="img-responsive">
-                        </div>
-                        <div class="item-caption">
-                            <div class="col-md-3 col-sm-3 col-xs-3 uni-clear-padding">
-                                <div class="item-icons">
-                                    <img src="images/icons_box/icon_4/icon-4.png" alt="">
-                                </div>
-                            </div>
-                            <div class="col-md-9 col-sm-9 col-xs-9 uni-clear-padding">
-                                <div class="item-title">
-                                    <h4>Henrik larssom</h4>
-                                    <span>neurologist</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="uni-team-default">
-                        <div class="item-img">
-                            <img src="images/team/img2.png" alt="" class="img-responsive">
-                        </div>
-                        <div class="item-caption">
-                            <div class="col-md-3 col-sm-3 col-xs-3 uni-clear-padding">
-                                <div class="item-icons">
-                                    <img src="images/icons_box/icon_4/icon-3.png" alt="">
-                                </div>
-                            </div>
-                            <div class="col-md-9 col-sm-9 col-xs-9 uni-clear-padding">
-                                <div class="item-title">
-                                    <h4>amanda smith</h4>
-                                    <span>Ophthalmology doctor</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="uni-team-default">
-                        <div class="item-img">
-                            <img src="images/team/img3.png" alt="" class="img-responsive">
-                        </div>
-                        <div class="item-caption">
-                            <div class="col-md-3 col-sm-3 col-xs-3 uni-clear-padding">
-                                <div class="item-icons">
-                                    <img src="images/icons_box/icon_4/icon-2.png" alt="">
-                                </div>
-                            </div>
-                            <div class="col-md-9 col-sm-9 col-xs-9 uni-clear-padding">
-                                <div class="item-title">
-                                    <h4>david martin</h4>
-                                    <span>Cancer doctor</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="uni-team-default">
-                        <div class="item-img">
-                            <img src="images/team/img.png" alt="" class="img-responsive">
-                        </div>
-                        <div class="item-caption">
-                            <div class="col-md-3 col-sm-3 col-xs-3 uni-clear-padding">
-                                <div class="item-icons">
-                                    <img src="images/icons_box/icon_4/icon-5.png" alt="">
-                                </div>
-                            </div>
-                            <div class="col-md-9 col-sm-9 col-xs-9 uni-clear-padding">
-                                <div class="item-title">
-                                    <h4>adam jonson</h4>
-                                    <span>Cardiologist</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="uni-team-default">
-                        <div class="item-img">
-                            <img src="images/team/img1.png" alt="" class="img-responsive">
-                        </div>
-                        <div class="item-caption">
-                            <div class="col-md-3 col-sm-3 col-xs-3 uni-clear-padding">
-                                <div class="item-icons">
-                                    <img src="images/icons_box/icon_4/icon-4.png" alt="">
-                                </div>
-                            </div>
-                            <div class="col-md-9 col-sm-9 col-xs-9 uni-clear-padding">
-                                <div class="item-title">
-                                    <h4>Henrik larssom</h4>
-                                    <span>neurologist</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                {% endfor %}
+                    
             </div>
         </div>
     </div>
