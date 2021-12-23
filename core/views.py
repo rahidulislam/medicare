@@ -3,7 +3,7 @@ from django.views.generic import View
 from core.models import Banner
 from core.forms import AppointmentForm
 from django.contrib import messages
-from department.models import Department, Doctor
+from department.models import Department, Doctor, Service
 # Create your views here.
 
 class HomeView(View):
@@ -13,12 +13,14 @@ class HomeView(View):
         banners = Banner.objects.all().order_by('-id')[:5]
         departments = Department.objects.all()
         doctors = Doctor.objects.all()
+        services = Service.objects.all()
         appointment_form = AppointmentForm
         context = {
             'banners': banners,
             'appointment_form': appointment_form,
             'departments': departments,
-            'doctors': doctors
+            'doctors': doctors,
+            'services': services
         }
         return render(request, self.template_name, context)
 

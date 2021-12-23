@@ -8,150 +8,32 @@
             </div>
 
             <div class="row">
+                
+                {% for service in services %}
                 <div class="col-md-4 col-sm-6">
                     <div class="uni-shortcode-icons-box-5-default">
                         <div class="item-icons-title">
                             <div class="col-md-4 uni-clear-padding">
                                 <div class="item-icons">
-                                    <img src="images/icons_box/icon_4/icon-5.png" alt="">
+                                    <img src="{{ service.department.image_url }}" alt="{{ service.name }}">
                                 </div>
                             </div>
                             <div class="col-md-8 uni-clear-padding">
                                 <div class="item-title">
-                                    <h4>Corneal transplant surgery</h4>
+                                    <h4>{{ service.name }}</h4>
                                 </div>
                             </div>
                         </div>
                         <div class="item-caption">
                             <p>
-                                Pellentesque habitant morbi tristique senectus et netus et malesuada
-                                fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae,
-                                ultricies eget...
+                                {{ service.short_description|safe }}
                             </p>
                             <a href="#" class="readmore">Read more</a>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 col-sm-6">
-                    <div class="uni-shortcode-icons-box-5-default">
-                        <div class="item-icons-title">
-                            <div class="col-md-4 uni-clear-padding">
-                                <div class="item-icons">
-                                    <img src="images/icons_box/icon_4/icon-4.png" alt="">
-                                </div>
-                            </div>
-                            <div class="col-md-8 uni-clear-padding">
-                                <div class="item-title">
-                                    <h4>Cardiothoracic Surgery</h4>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item-caption">
-                            <p>
-                                Pellentesque habitant morbi tristique senectus et netus et malesuada
-                                fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae,
-                                ultricies eget...
-                            </p>
-                            <a href="#" class="readmore">Read more</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6">
-                    <div class="uni-shortcode-icons-box-5-default">
-                        <div class="item-icons-title">
-                            <div class="col-md-4 uni-clear-padding">
-                                <div class="item-icons">
-                                    <img src="images/icons_box/icon_4/icon-3.png" alt="">
-                                </div>
-                            </div>
-                            <div class="col-md-8 uni-clear-padding">
-                                <div class="item-title">
-                                    <h4>General health check</h4>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item-caption">
-                            <p>
-                                Pellentesque habitant morbi tristique senectus et netus et malesuada
-                                fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae,
-                                ultricies eget...
-                            </p>
-                            <a href="#" class="readmore">Read more</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6">
-                    <div class="uni-shortcode-icons-box-5-default">
-                        <div class="item-icons-title">
-                            <div class="col-md-4 uni-clear-padding">
-                                <div class="item-icons">
-                                    <img src="images/icons_box/icon_4/icon-2.png" alt="">
-                                </div>
-                            </div>
-                            <div class="col-md-8 uni-clear-padding">
-                                <div class="item-title">
-                                    <h4>Diagnosis &amp; <br> treatment of cancer</h4>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item-caption">
-                            <p>
-                                Pellentesque habitant morbi tristique senectus et netus et malesuada
-                                fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae,
-                                ultricies eget...
-                            </p>
-                            <a href="#" class="readmore">Read more</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6">
-                    <div class="uni-shortcode-icons-box-5-default">
-                        <div class="item-icons-title">
-                            <div class="col-md-4 uni-clear-padding">
-                                <div class="item-icons">
-                                    <img src="images/icons_box/icon_4/icon-1.png" alt="">
-                                </div>
-                            </div>
-                            <div class="col-md-8 uni-clear-padding">
-                                <div class="item-title">
-                                    <h4>treatment of <br> pneumonia</h4>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item-caption">
-                            <p>
-                                Pellentesque habitant morbi tristique senectus et netus et malesuada
-                                fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae,
-                                ultricies eget...
-                            </p>
-                            <a href="#" class="readmore">Read more</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6">
-                    <div class="uni-shortcode-icons-box-5-default">
-                        <div class="item-icons-title">
-                            <div class="col-md-4 uni-clear-padding">
-                                <div class="item-icons">
-                                    <img src="images/icons_box/icon_4/icon.png" alt="">
-                                </div>
-                            </div>
-                            <div class="col-md-8 uni-clear-padding">
-                                <div class="item-title">
-                                    <h4>Treatment of <br> dermatitis</h4>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item-caption">
-                            <p>
-                                Pellentesque habitant morbi tristique senectus et netus et malesuada
-                                fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae,
-                                ultricies eget...
-                            </p>
-                            <a href="#" class="readmore">Read more</a>
-                        </div>
-                    </div>
-                </div>
+                {% endfor %}
+                    
             </div>
 
             <div class="btn-all-services">
