@@ -1,6 +1,6 @@
 from django.shortcuts import redirect, render
 from django.views.generic import View
-from core.models import Banner
+from core.models import Banner, Faq
 from core.forms import AppointmentForm
 from django.contrib import messages
 from department.models import Department, Doctor, Service
@@ -14,13 +14,15 @@ class HomeView(View):
         departments = Department.objects.all()
         doctors = Doctor.objects.all()
         services = Service.objects.all()
+        faqs = Faq.objects.all()
         appointment_form = AppointmentForm
         context = {
             'banners': banners,
             'appointment_form': appointment_form,
             'departments': departments,
             'doctors': doctors,
-            'services': services
+            'services': services,
+            'faqs': faqs
         }
         return render(request, self.template_name, context)
 
