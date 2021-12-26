@@ -1,6 +1,6 @@
 from django.shortcuts import redirect, render
 from django.views.generic import View
-from core.models import Banner, Faq
+from core.models import Banner, ClientSay, Faq
 from core.forms import AppointmentForm
 from django.contrib import messages
 from department.models import Department, Doctor, Service
@@ -15,6 +15,7 @@ class HomeView(View):
         doctors = Doctor.objects.all()
         services = Service.objects.all()
         faqs = Faq.objects.all()
+        testimonials = ClientSay.objects.all()
         appointment_form = AppointmentForm
         context = {
             'banners': banners,
@@ -22,7 +23,8 @@ class HomeView(View):
             'departments': departments,
             'doctors': doctors,
             'services': services,
-            'faqs': faqs
+            'faqs': faqs,
+            'testimonials': testimonials
         }
         return render(request, self.template_name, context)
 
